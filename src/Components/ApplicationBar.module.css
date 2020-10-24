@@ -1,0 +1,21 @@
+.appBarTitle {
+    color: #1e1e62;
+    font-size: 20px !important;
+    font-weight: bolder !important;
+    text-align: center !important;
+    line-height: 20px !important;
+}
+
+.appBarBtn {
+    background: black !important;
+    width: 100% !important;
+    margin: 5px !important;
+}
+
+.restart {
+    color: #fd4e4e !important;
+}
+
+.finish {
+    color: #1ce71c !important;
+}

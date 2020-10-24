@@ -1,0 +1,21 @@
+.tableLayout {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    height: 100%;
+    width: 100%;
+}
+.tableLayoutRow {
+    display: flex;
+    flex-direction: row;
+}
+
+.tableLayoutColumn {
+    display: flex;
+    /*height: 100%;*/
+    /*flex: 1;*/
+    place-items: center;
+    justify-content: center;
+    /*outline:1px dashed black;*/
+
+}
