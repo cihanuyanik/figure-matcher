@@ -34,6 +34,7 @@ const FigureGroup = (props) => {
           }
           width={imgSize - 10}
           height={imgSize - 10}
+          alt={`fig${value}`}
         />
       </div>
     );

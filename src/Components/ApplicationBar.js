@@ -11,10 +11,7 @@ import {
   initExerciseSet,
   nextFigureSet,
   restart,
-  selectTotalAnswer,
-  selectWrongAnsweredFigureSets,
 } from "../ReduxStore/matchSlice";
-import store from "../ReduxStore/store";
 import { resultDialogShow } from "../ReduxStore/resultDialogSlice";
 
 const ApplicationBar = () => {
@@ -26,14 +23,6 @@ const ApplicationBar = () => {
   };
 
   const onFinishClick = () => {
-    const totalAnswer = selectTotalAnswer(store.getState());
-    const wrongOnes = selectWrongAnsweredFigureSets(store.getState());
-    console.log(totalAnswer);
-    console.log(wrongOnes);
-    console.log(
-      "Success Rate:",
-      (totalAnswer - wrongOnes.length) / totalAnswer
-    );
     dispatch(resultDialogShow());
   };
   return (

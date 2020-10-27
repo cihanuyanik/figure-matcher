@@ -1,9 +1,9 @@
-import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
+import { createSlice } from "@reduxjs/toolkit";
 import { randomInt } from "../utils";
 
 const getInitialState = () => {
   return {
-    MAX_SET_NUMBER: 10,
+    MAX_SET_NUMBER: 30,
     exerciseSet: [],
     currentFigureSet: -1,
     currentFigureSetIndex: -1,

@@ -1,6 +1,4 @@
 import React, { useState } from "react";
-
-import PropTypes from "prop-types";
 import styles from "./FigureGroup.module.css";
 import { useSelector } from "react-redux";
 import {
@@ -35,6 +33,7 @@ const RefFigure = (props) => {
         src={figSet > -1 ? `Images/${figSet}/${refFig}.jpg` : "Images/base.jpg"}
         width={imgSize - 10}
         height={imgSize - 10}
+        alt={"refFigure"}
       />
     </div>
   );
