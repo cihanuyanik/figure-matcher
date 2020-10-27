@@ -12,8 +12,6 @@
 
 .tableLayoutColumn {
     display: flex;
-    /*height: 100%;*/
-    /*flex: 1;*/
     place-items: center;
     justify-content: center;
     /*outline:1px dashed black;*/

@@ -6,9 +6,10 @@ import TableLayout, {
 } from "./Components/TableLayout";
 import FigureGroup from "./Components/FigureGroup";
 import RefFigure from "./Components/RefFigure";
-import ActionButtons from "./Components/ActionButtons";
 import ApplicationBar from "./Components/ApplicationBar";
 import ResultDialog from "./Components/ResultDialog";
+import ButtonGreen from "./Components/ButtonGreen";
+import ButtonRed from "./Components/ButtonRed";
 
 function App() {
   return (
@@ -17,15 +18,26 @@ function App() {
         rows={[
           new RowDefinition({ height: 50 }),
           new RowDefinition(),
+          new RowDefinition({ height: 10 }),
+
           new RowDefinition(),
-          new RowDefinition({ height: 75 }),
         ]}
         columns={[new ColumnDefinition()]}
         cells={[
           [<ApplicationBar />],
           [<FigureGroup />],
-          [<RefFigure />],
-          [<ActionButtons />],
+          [""],
+          [
+            <TableLayout
+              rows={[new RowDefinition()]}
+              columns={[
+                new ColumnDefinition({ width: "min-content" }),
+                new ColumnDefinition(),
+                new ColumnDefinition({ width: "min-content" }),
+              ]}
+              cells={[[<ButtonRed />, <RefFigure />, <ButtonGreen />]]}
+            />,
+          ],
         ]}
       />
       <ResultDialog />

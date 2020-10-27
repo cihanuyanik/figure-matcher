@@ -1,7 +1,6 @@
 import React from "react";
 import Dialog from "@material-ui/core/Dialog";
 import DialogContent from "@material-ui/core/DialogContent";
-import DialogContentText from "@material-ui/core/DialogContentText";
 import DialogTitle from "@material-ui/core/DialogTitle";
 import { useDispatch, useSelector } from "react-redux";
 import {
@@ -13,6 +12,7 @@ import {
   selectWrongAnsweredFigureSets,
 } from "../ReduxStore/matchSlice";
 import store from "../ReduxStore/store";
+import { Typography } from "@material-ui/core";
 
 export default function ResultDialog() {
   const open = useSelector(selectResultDialogOpen);
@@ -29,16 +29,14 @@ export default function ResultDialog() {
     <Dialog open={open} onClose={onClose}>
       <DialogTitle>{"Alıştırma Sonucu"}</DialogTitle>
       <DialogContent>
-        <DialogContentText>
-          <div>{`Toplam cevaplandırılan şekil: ${totalAnswer}`}</div>
-          <div>{`Doğru cevap sayısı: ${
-            totalAnswer - wrongAnswers.length
-          }`}</div>
-          <div>{`Yanlış cevap sayısı: ${wrongAnswers.length}`}</div>
-          <div>{`Başarı oranı: %${Math.round(
-            (100 * (totalAnswer - wrongAnswers.length)) / totalAnswer
-          )}`}</div>
-        </DialogContentText>
+        <Typography>{`Toplam cevaplandırılan şekil: ${totalAnswer}`}</Typography>
+        <Typography>{`Doğru cevap sayısı: ${
+          totalAnswer - wrongAnswers.length
+        }`}</Typography>
+        <Typography>{`Yanlış cevap sayısı: ${wrongAnswers.length}`}</Typography>
+        <Typography>{`Başarı oranı: %${Math.round(
+          (100 * (totalAnswer - wrongAnswers.length)) / totalAnswer
+        )}`}</Typography>
       </DialogContent>
     </Dialog>
   );

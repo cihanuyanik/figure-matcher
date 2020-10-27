@@ -11,6 +11,7 @@ const getInitialState = () => {
     currentExpectedAnswer: -1,
     totalAnswer: 0,
     wrongAnsweredFigureSets: [],
+    imgSize: 0,
   };
 };
 
@@ -72,6 +73,14 @@ export const matcherSlice = createSlice({
         }
       },
     },
+    setImageSize: {
+      prepare: (size) => {
+        return { payload: { size } };
+      },
+      reducer: (state, action) => {
+        state.imgSize = action.payload.size;
+      },
+    },
   },
 });
 
@@ -80,6 +89,7 @@ export const {
   initExerciseSet,
   nextFigureSet,
   answerFigureSet,
+  setImageSize,
 } = matcherSlice.actions;
 
 export const selectCurrentFigureSet = (state) => state.matcher.currentFigureSet;
@@ -87,4 +97,6 @@ export const selectCurrentRefFigure = (state) => state.matcher.currentRefFigure;
 export const selectTotalAnswer = (state) => state.matcher.totalAnswer;
 export const selectWrongAnsweredFigureSets = (state) =>
   state.matcher.wrongAnsweredFigureSets;
+export const selectImageSize = (state) => state.matcher.imgSize;
+
 export default matcherSlice.reducer;
